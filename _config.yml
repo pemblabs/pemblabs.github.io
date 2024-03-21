@@ -1,7 +1,7 @@
 #-------------------------------
 # General Site Settings
 title: P.E.M.B LAB RESEARCH
-logo: /images/0.png # You can add own logo. For example '/images/logo.png'.
+logo: #/images/0.png # You can add own logo. For example '/images/logo.png'.
 description: PEMB LAB is space for security research and all topics about cyber security.
 baseurl: "" # The subpath of your site, e.g. /blog
 url: "https://pemblabs.github.io" # The base hostname & protocol for your site, e.g. http://example.com
@@ -68,15 +68,15 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll/tagging
-  - jekyll-coffeescript
-  - jekyll-default-layout
-  - jekyll-gist
-  - jekyll-github-metadata
-  - jekyll-optional-front-matter
+  #- jekyll-coffeescript
+  #- jekyll-default-layout
+  #- jekyll-gist
+  #- jekyll-github-metadata
+  #- jekyll-optional-front-matter
   - jekyll-paginate
-  - jekyll-readme-index
-  - jekyll-titles-from-headings
-  - jekyll-relative-links
+  #- jekyll-readme-index
+  #- jekyll-titles-from-headings
+  #- jekyll-relative-links
 
 paginate: 8
 paginate_path: "/page/:num"
