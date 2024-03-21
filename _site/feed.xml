@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>P.E.M.B LAB RESEARCH</title>
+    <description>PEMB LAB is space for security research and all topics about cyber security.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 20 Mar 2024 23:29:24 -0500</pubDate>
+    <lastBuildDate>Wed, 20 Mar 2024 23:29:24 -0500</lastBuildDate>
+    <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>Powershell Dropper</title>
+        <description>&lt;p&gt;I found an interesting PowerShell script uploaded today on Malware Bazaar uploaded at 2023-05-31 02:06 (UTC) then turns out to be a dropper.
+Malwarte Bazaar is an online platform and repository used by many analysts and reverse engineers looking to collect and share information about malware samples and artifacts.&lt;/p&gt;
+
+&lt;p&gt;This particular sample was a malicious PowerShell script dropper file to deliver and install additional malware. A delivery mechanism that is very much known in the community.
+Upon analyzing the file first thing you see is that it’s ASCII encoded in order to obfuscate its purpose.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/20-1.jpg&quot; alt=&quot;ASCII Encoded&quot; /&gt;
+&lt;em&gt;ASCII encoded PS&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;So continuing with static analysis of the file I decided to write two simple Python scripts that should do the job to deobfuscate this file. First I copied the obfuscated strings into a file and then create a simple carver to get rid of the unnecessary strings.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;with open(&apos;psscript.txt&apos;,&apos;r&apos;) as f:
+        ara = f.read().replace(&quot;[char]&quot;, &quot;&quot;)
+        print(ara)
+        ara_ara = ara.replace(&quot;+&quot;, &quot;,&quot;)
+        print(ara_ara)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After that, all that was left now is to decode the ASCII strings. For that Python has a built function to make the job easier. I first put each individual carved string into 4 different variables and loop through and joined them to get the intended result.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;decoded = &apos;&apos;.join(chr(i) for i in snip1)
+print(decoded)
+decoded = &apos;&apos;.join(chr(i) for i in snip2)
+print(decoded)
+decoded = &apos;&apos;.join(chr(i) for i in snip3)
+print(decoded)
+decoded = &apos;&apos;.join(chr(i) for i in snip4)
+print(decoded)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this is the result of the deobfuscated strings ( don’t mind the printed statements it’s good to know how the code is doing 😁). So you can see where this is going.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/20-2.jpg&quot; alt=&quot;Decoded PS script&quot; /&gt;
+&lt;em&gt;Decoded PS script&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;So now let’s put our decoded strings into their respective place and take a bird’s eye view to see how the script actually is and go over what it does.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/20-3.jpg&quot; alt=&quot;Encoded and Decoded script&quot; /&gt;
+&lt;em&gt;Encoded and Decoded script&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that we have the beautiful thing here, what is it actually doing?
+First, it creates an alias called “rzs” which is used to execute a series of commands using the “invoke-expression”. It assigns a value to the “global:block” variable to create a new instance of “System.Net.WebClient” class and then invokes the method “DownlaodString” of the “WebClient” instance with our precious URL “hxxp://dz7eg[.]top/515/sdfzw.php?i=”.&lt;/p&gt;
+
+&lt;p&gt;One interesting is that it concatenates the hostname of the machine to the URL as a parameter perhaps to keep track of the infected devices.
+If it survives the week perhaps I will see if we can get that 2nd stage payload.
+Hope you enjoyed it 🙂 God bless you!&lt;/p&gt;
+
+&lt;h2 id=&quot;ioc&quot;&gt;IOC&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;SHA256 hash: 9d1582c69b56d7279f4962a9648524d9c57613b8fc2f7ad74fc2fd55f748e200&lt;/li&gt;
+  &lt;li&gt;SHA1 hash: c0b8449c705d2603a419f210ad3c7a2f98941b9b&lt;/li&gt;
+  &lt;li&gt;MD5 hash: c027bbcb1ccdc36e4b742b8d445b73fa&lt;/li&gt;
+  &lt;li&gt;URL: hxxp://dz7eg[.]top/515/sdfzw.php?i=&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 30 May 2023 07:01:35 -0500</pubDate>
+        <link>http://localhost:4000/2023/05/30/Powershell-Dropper/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023/05/30/Powershell-Dropper/</guid>
+        
+        <category>malware</category>
+        
+        <category>dropper</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
