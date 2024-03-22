@@ -6,10 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Powershell Dropper</title>
-  <meta name='description' content='I found an interesting PowerShell script uploaded today on Malware Bazaar uploaded at 2023-05-31 02:06 (UTC) then turns out to be a dropper...'>
+  <title>P.E.M.B LAB RESEARCH</title>
+  <meta name='description' content='PEMB LAB is space for security research and all topics about cyber security.'>
 
-  <link rel="canonical" href="http://localhost:4000/2023/05/30/Powershell-Dropper/">
+  <link rel="canonical" href="http://localhost:4000/tag/static/">
   <link rel="alternate" type="application/rss+xml" title="P.E.M.B LAB RESEARCH" href="/feed.xml">
 
   <!-- Fonts -->
@@ -228,293 +228,85 @@
 
   <!-- begin content -->
   <main class="content" aria-label="Content">
-    <div class="post-head">
-  <div class="container">
-    <div class="row">
-      
-      <div class="col col-6 col-t-12">
-        <div class="image-box">
-          <img class="post-image lazy" data-src="/images/20.png" alt="Powershell Dropper">
-        </div>
-      </div>
-      
-  
-      <div class="col col-6 col-t-12">
-        <div class="post-head__box">
-        
-          <div class="post__meta">
-            <span class="post__minutes">
-              
-              
-                2 min read
-              
-              <time class="post__date"
-                datetime="2023-05-30T07:01:35-05:00">May 30, 2023</time>
-            </span>
-          </div>
-        
-          <h2 class="post__title">Powershell Dropper</h2>
-        
-          <div class="post__bottom">
-        
-            <div class="post__author">
-              <a href="/about/" aria-label="PEMB"><img class="post__author-image"
-                  src="/images/0.png" alt="PEMB's Picture"></a>
-            </div>
-        
-            <div class="post__bottom-meta">
-              <a href="/about/" class="post__author-link">PEMB</a>
-              
-              <span>in</span>
-              <span class="post-tags">
-                
-                <a href="/tag/malware" class="post__tag">malware</a>
-                
-                <a href="/tag/dropper" class="post__tag">dropper</a>
-                
-              </span>
-              
-            </div>
-          </div>
-        
-        </div>
+    <div class="container">
+  <div class="row">
+    <div class="col col-8 col-d-10 col-m-12 push-m-0 push-d-1 push-2">
+      <div class="archive-box">
+        <span class="archive-meta">1 post  tagged</span>
+        <h1 class="archive-title">static</h1>
       </div>
     </div>
   </div>
 </div>
 
-<!-- begin post -->
-<div class="container">
-  <article class="post animate">
-
-    <div class="post__content">
-      <p>I found an interesting PowerShell script uploaded today on Malware Bazaar uploaded at 2023-05-31 02:06 (UTC) then turns out to be a dropper.
-Malwarte Bazaar is an online platform and repository used by many analysts and reverse engineers looking to collect and share information about malware samples and artifacts.</p>
-
-<p>This particular sample was a malicious PowerShell script dropper file to deliver and install additional malware. A delivery mechanism that is very much known in the community.
-Upon analyzing the file first thing you see is that it’s ASCII encoded in order to obfuscate its purpose.</p>
-
-<p><img src="/images/20-1.jpg" alt="ASCII Encoded" />
-<em>ASCII encoded PS</em></p>
-
-<p>So continuing with static analysis of the file I decided to write two simple Python scripts that should do the job to deobfuscate this file. First I copied the obfuscated strings into a file and then create a simple carver to get rid of the unnecessary strings.</p>
-
-<pre><code class="language-Python">with open('psscript.txt','r') as f:
-        ara = f.read().replace("[char]", "")
-        print(ara)
-        ara_ara = ara.replace("+", ",")
-        print(ara_ara)
-
-</code></pre>
-
-<p>After that, all that was left now is to decode the ASCII strings. For that Python has a built function to make the job easier. I first put each individual carved string into 4 different variables and loop through and joined them to get the intended result.</p>
-
-<pre><code class="language-Python">decoded = ''.join(chr(i) for i in snip1)
-print(decoded)
-decoded = ''.join(chr(i) for i in snip2)
-print(decoded)
-decoded = ''.join(chr(i) for i in snip3)
-print(decoded)
-decoded = ''.join(chr(i) for i in snip4)
-print(decoded)
-
-</code></pre>
-
-<p>And this is the result of the deobfuscated strings ( don’t mind the printed statements it’s good to know how the code is doing 😁). So you can see where this is going.</p>
-
-<p><img src="/images/20-2.jpg" alt="Decoded PS script" />
-<em>Decoded PS script</em></p>
-
-<p>So now let’s put our decoded strings into their respective place and take a bird’s eye view to see how the script actually is and go over what it does.</p>
-
-<p><img src="/images/20-3.jpg" alt="Encoded and Decoded script" />
-<em>Encoded and Decoded script</em></p>
-
-<p>Now that we have the beautiful thing here, what is it actually doing?
-First, it creates an alias called “rzs” which is used to execute a series of commands using the “invoke-expression”. It assigns a value to the “global:block” variable to create a new instance of “System.Net.WebClient” class and then invokes the method “DownlaodString” of the “WebClient” instance with our precious URL “hxxp://dz7eg[.]top/515/sdfzw.php?i=”.</p>
-
-<p>One interesting is that it concatenates the hostname of the machine to the URL as a parameter perhaps to keep track of the infected devices.
-If it survives the week perhaps I will see if we can get that 2nd stage payload.
-Hope you enjoyed it 🙂 God bless you!</p>
-
-<h2 id="ioc">IOC</h2>
-<ul>
-  <li>SHA256 hash: 9d1582c69b56d7279f4962a9648524d9c57613b8fc2f7ad74fc2fd55f748e200</li>
-  <li>SHA1 hash: c0b8449c705d2603a419f210ad3c7a2f98941b9b</li>
-  <li>MD5 hash: c027bbcb1ccdc36e4b742b8d445b73fa</li>
-  <li>URL: hxxp://dz7eg[.]top/515/sdfzw.php?i=</li>
-</ul>
-
-    </div>
-
-    <div class="post__share">
-      <div class="share__list">
-        <a class="share__link share__linkedin" href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/2023/05/30/Powershell-Dropper/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
-
-        <a class="share__link share__twitter" href="https://twitter.com/intent/tweet?text=Powershell%20Dropper&url=http://localhost:4000/2023/05/30/Powershell-Dropper/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
-
-      </div>
-    </div>
-
-    <div class="post__navigation">
-      
-      
-      <a class="next" href="/2024/03/22/Static-Malware-Analysis-string-floss/">
-        <img class="post__nav-image lazy" data-src="/images/strings_vs_floss.png" alt="Static Malware Analysis∶ to string or to floss that is the question">
-        <div class="post__nav-box">
-          <div class="post__nav post__nav__next">Next Post <i class="ion ion-md-arrow-forward"></i></div>
-          <h4 class="post__nav__title">Static Malware Analysis∶ to string or to floss that is the question</h4>
-        </div>
-      </a>
-      
-    </div>
-
-  </article>
-</div>
-<!-- end post -->
-
-
-
-
-
-
-
-<div class="container">
-  <div class="related-posts is-related">
-    <div class="row">
-      <div class="col col-12">
-        <div class="container__inner">
-          <h3 class="related-title">You may also like</h3>
-          <div class="row grid">
-
-          
-            
-            
-
-            
-
-            
-
-            <div class="article col col-4 col-d-6 col-t-12 grid__post">
-              <div class="article__inner">
-
-                
-                <a class="article__image" href="/2024/03/22/Static-Malware-Analysis-string-floss/">
-                  <img class="lazy" data-src="/images/strings_vs_floss.png" alt="Static Malware Analysis∶ to string or to floss that is the question">
-                </a>
-                
-
-                <div class="article__content">
-
-                  <div class="article__meta">
-                    <span class="article__minutes">
-                      
-                      
-                        2 min read
-                      
-                      <time class="article__date"
-                        datetime="2024-03-22T07:01:35-05:00">Mar 22, 2024</time>
-                    </span>
-                  </div>
-
-                  <h2 class="article__title">Static Malware Analysis∶ to string or to floss that is the question</h2>
-
-                  <p class="article__excerpt">Every analyst has one or two methodologies for analyzing malware and perhaps even different approaches based on the malware type being analyzed. Regardless of many ways you can analyze malware we all do static analysis and look into strings at some point.</p>
-
-                  <div class="article__bottom">
-
-                    
-                    <div class="article__author">
-                      <a href="/about/" aria-label="PEMB"><img class="article__author-image lazy" data-src="/images/0.png" alt="PEMB's Picture"></a>
-                    </div>
-                    
-
-                    <div class="article__bottom-meta">
-                      
-                        <a href="/about/" class="article__author-link">PEMB</a>
-                      
-                      
-                      <span>in</span>
-                      <span class="article-tags">
-                        
-                          <a href="/tag/malware" class="article__tag">malware</a>
-                        
-                          <a href="/tag/static" class="article__tag">static</a>
-                        
-                          <a href="/tag/analysis" class="article__tag">analysis</a>
-                        
-                      </span>
-                      
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-
-            
-                
-              
-            
-            
-            
-
-            
-
-            
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
- <!-- begin comments -->
 <div class="container">
   <div class="row">
-    <div class="col col-12">
-      <div class="disqus-inner">
-        <div id="disqus_thread" class="post-comments">
-          <div id="disqus_empty"></div>
+    <div class="col col-12 col-d-10 col-m-12 push-m-0 push-d-1">
+      <div class="container__inner">
+        <div class="row grid">
+          
+            <div class="article col col-4 col-d-6 col-t-12 grid__post animate">
+  <div class="article__inner">
+
+    
+    <a class="article__image" href="/2024/03/22/Static-Malware-Analysis-string-floss/">
+      <img class="lazy" data-src="/images/strings_vs_floss.png" alt="Static Malware Analysis∶ to string or to floss that is the question">
+    </a>
+    
+
+    <div class="article__content">
+
+      <div class="article__meta">
+        <span class="article__minutes">
+          
+            
+              2 min read
+          
+          <time class="article__date" datetime="2024-03-22T07:01:35-05:00">Mar 22, 2024</time>
+        </span>
+      </div>
+
+      <h2 class="article__title">Static Malware Analysis∶ to string or to floss that is the question</h2>
+
+      <p class="article__excerpt">Every analyst has one or two methodologies for analyzing malware and perhaps even different approaches based on the malware type being analyzed. Regardless of many ways you can analyze malware we all do static analysis and look into strings at some point.</p>
+
+      <div class="article__bottom">
+
+        
+        <div class="article__author">
+          <a href="/about/" aria-label="PEMB"><img class="article__author-image lazy" data-src="/images/0.png" alt="PEMB's Picture"></a>
+        </div>
+        
+
+        <div class="article__bottom-meta">
+          
+            <a href="/about/" class="article__author-link">PEMB</a>
+          
+          
+            <span>in</span>
+            <span class="article-tags">
+              
+                <a href="/tag/malware" class="article__tag">malware</a>
+              
+                <a href="/tag/static" class="article__tag">static</a>
+              
+                <a href="/tag/analysis" class="article__tag">analysis</a>
+              
+            </span>
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+          
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  function load_disqus() {
-    var disqus_shortname = 'disqus_Fq7hdEKdRo',
-      is_disqus_empty = document.getElementById('disqus_empty'),
-      disqus_target = document.getElementById('disqus_thread'),
-      disqus_embed = document.createElement('script'),
-      disqus_hook = (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]);
-
-    if (disqus_target && is_disqus_empty) {
-      disqus_embed.type = 'text/javascript';
-      disqus_embed.async = true;
-      disqus_embed.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      disqus_hook.appendChild(disqus_embed);
-      is_disqus_empty.remove();
-    }
-  }
-
-  window.addEventListener('scroll', function (e) {
-    var currentScroll = document.scrollingElement.scrollTop;
-    var disqus_target = document.getElementById('disqus_thread');
-
-    if (disqus_target && (currentScroll > disqus_target.getBoundingClientRect().top - 150)) {
-      load_disqus('disqus_shortname');
-    }
-  }, false);
-
-</script>
-<noscript>Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-<!-- end comments --> 
   </main> 
   <!-- end content -->
   

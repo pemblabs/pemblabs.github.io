@@ -5,9 +5,46 @@
     <description>PEMB LAB is space for security research and all topics about cyber security.</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Mar 2024 23:29:24 -0500</pubDate>
-    <lastBuildDate>Wed, 20 Mar 2024 23:29:24 -0500</lastBuildDate>
+    <pubDate>Fri, 22 Mar 2024 18:40:22 -0500</pubDate>
+    <lastBuildDate>Fri, 22 Mar 2024 18:40:22 -0500</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>Static Malware Analysis∶ to string or to floss that is the question</title>
+        <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Every analyst has one or two methodologies for analyzing malware and perhaps even different approaches based on the malware type being analyzed. Regardless of many ways you can analyze malware we all do static analysis and look into strings at some point. String observation is a very important part of static analysis for a quick triage of the malware. When programming we use many strings in the source code and so it is with malware and those strings can reveal vital information such as the C2 server’s IP or domain and many library imports that can reveal what type of malware we’re dealing with.&lt;/p&gt;
+
+&lt;p&gt;Although many tools incorporate some functionality that shows the string bytes, there are two main command line tools that almost every analyst uses and those are Strings and FLOSS. So today I want to cover in this article why you may want to choose one over the other. Before explaining that it will do us good to go over some string types.&lt;/p&gt;
+
+&lt;h3 id=&quot;ascii&quot;&gt;ASCII&lt;/h3&gt;
+&lt;p&gt;ASCII is a character encoding standard that represents a character using 7 or 8 bits which includes both upper and lower-case alphabetic characters, control characters, digits, and punctuation marks. As you may know, 8 bits is a byte so ASCII uses a single byte to represent a character.&lt;/p&gt;
+&lt;h3 id=&quot;wide&quot;&gt;WIDE&lt;/h3&gt;
+&lt;p&gt;The WIDE character encoding can represent a wider range of characters (pun intended) than ASCII and you may know it as the “wchar_t” data type as used in C and C++ programming languages. WIDE character encoding can represent multiple international languages such as Chinese that have characters outside of the range of ASCII. WIDE uses a two-byte encoding scheme.&lt;/p&gt;
+&lt;h3 id=&quot;unicode&quot;&gt;Unicode&lt;/h3&gt;
+&lt;p&gt;Unicode unlike the two mentioned above, it’s not a fixed-width encoding but rather a variable-width encoding which allows it to represent a larger set of characters from different languages, scripts, and symbols. Unicode uses many different schemes such as UTF-8, UTF-16, and UTF-32 assigning a unique code to the characters with some of the schemes using two bytes or four bytes.&lt;/p&gt;
+
+&lt;h3 id=&quot;understanding-the-tools-strings-and-floss&quot;&gt;Understanding the Tools: Strings and FLOSS&lt;/h3&gt;
+&lt;p&gt;Although both tools aim to provide strings of byte values and represent them to you in a readable form, the tool Strings will look simply to the byte values that are in a range of printable ASCII characters. This makes it so that Strings output shows more junk making the malware appear as though it’s packed when it might not be the case. Many malware today will use WIDE or UNICODE strings which will use multi-byte characters as explained.&lt;/p&gt;
+
+&lt;p&gt;FLOSS has the capability of looking not only for ASCII strings but also for WIDE characters, Unicode, and a myriad of string obfuscation techniques employed in malware. So FLOSS will give you a cleaner output than Strings and can reveal hidden commands.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;h3 id=&quot;best-practices-and-recommendations&quot;&gt;Best practices and recommendations&lt;/h3&gt;
+&lt;p&gt;Use Strings for a quick triage and analysis for simple malware samples that have none to little obfuscation. For more complicated malware samples use FLOSS to deal with highly obfuscated or encrypted malware that requires deeper string decoding.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 22 Mar 2024 07:01:35 -0500</pubDate>
+        <link>http://localhost:4000/2024/03/22/Static-Malware-Analysis-string-floss/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/03/22/Static-Malware-Analysis-string-floss/</guid>
+        
+        <category>malware</category>
+        
+        <category>static</category>
+        
+        <category>analysis</category>
+        
+        
+      </item>
     
       <item>
         <title>Powershell Dropper</title>
