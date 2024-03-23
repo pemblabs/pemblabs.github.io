@@ -4,7 +4,7 @@ title: P.E.M.B LAB RESEARCH
 logo: #/images/0.png # You can add own logo. For example '/images/logo.png'.
 description: PEMB LAB is space for security research and all topics about cyber security.
 baseurl: "" # The subpath of your site, e.g. /blog
-url: "https://pemblabs.github.io" # The base hostname & protocol for your site, e.g. http://example.com
+url: "https://pemblabs.net" # The base hostname & protocol for your site, e.g. http://example.com
 
 
 #-------------------------------
@@ -37,7 +37,7 @@ contact:
 # Example of adding a new link to the footer - {icon: "ion-logo-github", link: "https://github.com"}
 # Other icons can be found at https://ionicons.com/v4/
 social:
-#- {icon: "ion-logo-twitter", link: "https://twitter.com"}
+- {icon: "ion-logo-twitter", link: "https://twitter.com/0xPEMB"}
 - {icon: "ion-logo-linkedin", link: "https://www.linkedin.com/in/pedro-barros19/"}
 #- {icon: "ion-logo-youtube", link: "https://youtube.com"}
 - {icon: "ion-logo-github", link: "https://github.com/pemb-labs"}
@@ -51,13 +51,13 @@ disqus-identifier: disqus_Fq7hdEKdRo # Add your shortname for Disqus Comment. Fo
 
 #-------------------------------
 # Google Analytics
-google-analytics: # Add your identifier. For example UA-99631805-1.
+google-analytics: G-YBX466RJHB # Add your identifier. For example UA-99631805-1.
 
 
 #-------------------------------
 # Newsletter
-mailchimp: enable # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
-mailchimp-identifier: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
+mailchimp: # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
+mailchimp-identifier: duck.us22.list-manage.com/subscribe/post?u=169e55a57b3b56ef7e0d83f41&amp;id=bd5fd5adfa # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
 
 
 #-------------------------------
