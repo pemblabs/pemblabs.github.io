@@ -46,8 +46,8 @@ social:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus-identifier: disqus_Fq7hdEKdRo # Add your shortname for Disqus Comment. For example anvodstudio-demo
-
+disqus-identifier: disqus_0VlA7ivvCl # Add your shortname for Disqus Comment. For example anvodstudio-demo
+comments: true
 
 #-------------------------------
 # Google Analytics

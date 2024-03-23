@@ -3,7 +3,7 @@ layout: post
 title:  Powershell Dropper
 description: I found an interesting PowerShell script uploaded today on Malware Bazaar uploaded at 2023-05-31 02:06 (UTC) then turns out to be a dropper...
 date:   2023-05-30 15:01:35 +0300
-image:  '/images/20.png'
+image:  '/images/20.jpg'
 tags:   [malware, dropper]
 ---
 I found an interesting PowerShell script uploaded today on Malware Bazaar uploaded at 2023-05-31 02:06 (UTC) then turns out to be a dropper.
