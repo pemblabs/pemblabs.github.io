@@ -24,7 +24,7 @@ This functionality is found in the javascript file named "validate-email.js" loa
 
 One domain is being used for multiple repositories targeting different users but they all use the same phishing kit. It uses Vercel for automatic deployment of the initial page which verifies the identity of the user before redirecting the allowed user to the phish landing page.
 
-![phish]({{site.baseurl}}/images/phish.png)
+![phishpage]({{site.baseurl}}/images/phishpage.png)
 
 This was true of almost every active campaign available ont the threat actor's repo excpet for one, the repository "servdatapage", which had a totally different look and technique.
 
