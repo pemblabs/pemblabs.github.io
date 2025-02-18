@@ -58,3 +58,17 @@ On Part 2 I will focus more on the telegram channel and bot OSINT and my attempt
 * ams-pink[.]vercel[.]app  
 * andexy[.]docuaccount[.]com  
 * littlelionentertainment[.]docuaccount[.]com  
+
+### Stats
+Here are the top 10 email domains and the number of emails they contain:
+
+* pcsonet.com – 1,500 emails
+* tvb.com.hk – 400 emails
+* pwc.com – 154 emails
+* sbtaxcpa.com – 127 emails
+* claconnect.com – 97 emails
+* ey.com – 86 emails
+* winnco.com – 70 emails
+* worldclimatefoundation.org – 59 emails
+* brazosport.edu – 58 emails
+* trocaire.edu – 55 emails 
