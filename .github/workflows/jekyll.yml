@@ -48,7 +48,7 @@ jobs:
         run: gem install jekyll
 
       - name: Verify Jekyll Installation
-        run: jekyll -v
+        run: bundle exec jekyll -v
         
       - name: Setup Pages
         id: pages
