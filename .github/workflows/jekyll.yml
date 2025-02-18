@@ -29,23 +29,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y build-essential libssl-dev libreadline-dev zlib1g-dev git
-
-      - name: Install ruby-build
-        run: |
-          git clone https://github.com/rbenv/ruby-build.git /tmp/ruby-build
-          sudo /tmp/ruby-build/install.sh
-
-      - name: Install Ruby 3.3.7
-        run: |
-          sudo /tmp/ruby-build/bin/ruby-build 3.3.7 /opt/hostedtoolcache/Ruby/3.3.7/x64
-          echo "Adding Ruby to PATH"
-          echo "/opt/hostedtoolcache/Ruby/3.3.7/x64/bin" >> $GITHUB_PATH
-          touch /opt/hostedtoolcache/Ruby/3.3.7/x64.complete
-
       - name: Verify Ruby installation
         run: ruby -v
 
