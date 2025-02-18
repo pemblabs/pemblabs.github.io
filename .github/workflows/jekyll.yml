@@ -42,7 +42,7 @@ jobs:
         run: bundle -v
 
       - name: Install Dependencies
-        run: bundle install --clean --jobs 4
+        run: bundle install 
 
       - name: Install Jekyll (if missing)
         run: gem install jekyll
