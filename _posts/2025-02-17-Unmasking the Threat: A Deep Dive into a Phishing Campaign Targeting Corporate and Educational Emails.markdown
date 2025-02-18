@@ -14,7 +14,7 @@ Massive campaign targets over 27,000+ emails across across 14,000 domains from c
 This change in the deployment included few emails of the company I work for which triggered a threat intel alert for unsactioned brand name mentions. The threat actor add a total of 14 repositories with 7 being part of this active campaign and other which seem to have been used for testing. In addition to that,  what appears to be a phishing kit zip folder was still available on one of the repo.
 
 ### VIP Email Only Technique
-The threat actor/phishing kit employed what I am calling a VIP Email Only technique which the initial page only redirects emails that are part of the allowed email list to trhe phishing landing page which mimics Microsoft o365. The page simply displays a headline which says "Indentity Verification Required" and asks for the target to enter the user's organization email in order to proceed. This technique seems to be used to provide some sort of legitimacy as well to the page which also displays a cookie policy banner for the same intent.
+The threat actor/phishing kit employed what I am calling a VIP Email Only technique which the initial page only redirects emails that are part of the allowed email list to the phishing landing page mimicking Microsoft o365. The page simply displays a headline which says "Indentity Verification Required" and asks for the target to enter the user's organization email in order to proceed. This technique seems to be used to provide some sort of legitimacy to the page which also displays a cookie policy banner for the same intent.
 
 ![vipcheckin]({{site.baseurl}}/images/vipcheckin.png)
 
