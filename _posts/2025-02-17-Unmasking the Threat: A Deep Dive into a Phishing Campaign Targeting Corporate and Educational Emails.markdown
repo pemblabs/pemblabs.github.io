@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Unmasking the Threat: A Deep Dive into a Phishing Campaign Targeting Corporate and Educational Emails
+title: Unmasking the Threat∶ A Deep Dive into a Phishing Campaign Targeting Corporate and Educational Emails
 description: Massive campaign targets over 27,000+ emails across across 14,000 domains from corporate and education. A threat actor by the name of "Armandabors" on github initially made a commit to github to update the massive list of emails used for one of the phihing domains.
 date:   2025-02-17 15:01:35 +0300
 image:  '/images/phish.png'
