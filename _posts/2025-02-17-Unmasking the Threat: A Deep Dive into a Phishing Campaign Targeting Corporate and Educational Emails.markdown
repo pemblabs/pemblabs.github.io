@@ -39,7 +39,7 @@ Before we go into the details of the telegram channel and bot, a log file which 
 
 ![logs1ns]({{site.baseurl}}/images/logs1ns.png)
 
-I am currently obfuscating this portion because although the data seems to indicate that it was part of a test run perhaps on the threat actor's environment, which would be interesting, yet I can't be sure. I am in the process of reporting all the infrastructure I found so far and I am in possession of the phishing kit as well which I can provide with discretion. This can be requested on my LinkedIn or X handle.
+I am currently obfuscating this portion because although the data seems to indicate that it was part of a test run perhaps on the threat actor's environment, which would be interesting, yet I can't be sure. I am in the process of reporting all the infrastructure I found so far and I am in possession of the phishing kit as well as the list of all emails which I can provide with discretion. This can be requested on my LinkedIn or X handle.
 
 On Part 2 I will focus more on the telegram channel and bot OSINT and my attempt at attribution. Now go eat your IOCs.
 
