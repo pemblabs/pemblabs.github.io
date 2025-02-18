@@ -31,7 +31,7 @@ This was true of almost every active campaign available ont the threat actor's r
 ![servdatapage]({{site.baseurl}}/images/servdatapage.png)
 
 ### The Odd One
-This repositor was much simpler in it's deployment and look. The threat actor was still using Vercel for deployment but in this one there was no other trick to avoid analysis. Written in HTML and PHP, this was a simple phishing page which that would send the information enter by the user to a telegram channel.
+This repositor was much simpler in it's deployment and looks. The threat actor was still using Vercel for deployment but in this one there was no other trick to avoid analysis. Written in HTML and PHP, this was a simple phishing page which that would send the information enter by the user to a telegram channel.
 
 Surely if there is one thing, we should have learned from this Ivanti saga is that patching, factory reset or replacement must not be the end of the hunt. We should ask ourselves what threat actors are exploiting this vulnerability and what would post compromise look like? Essentially, what TTPs are being seen out there and create hunting packages that are easy to manage and upgrade when new intelligence is identified. 
 
