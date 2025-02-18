@@ -58,7 +58,7 @@ On Part 2 I will focus more on the telegram channel and bot OSINT, and my attemp
 * littlelionentertainment[.]docuaccount[.]com  
 
 ### Stats
-Here are the top 10 email domains and the number of emails they contain:
+Here are the top 10 email domains and the number of emails targeted:
 
 * pcsonet.com – 1,500 emails
 * tvb.com.hk – 400 emails
