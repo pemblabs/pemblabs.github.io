@@ -3,7 +3,7 @@ layout: post
 title: Unmasking the Threat∶ Telegram OSINT and Attempt at Attribution
 description: Last time on part 1 we made a deep dive into the overal campaign infrastructure operation revealing multiple indicators and targeted groups. This time Ia am going to focus on the findings related to the odd one, referering to the unique phishing page, I uncovered during the investigation. 
 date:   2025-03-01 15:01:35 +0300
-image:  '/images/phish.png'
+image:  '/images/telegramosint.png'
 tags:   [Phishing, ThreatIntel, telegram, osint, bot, attribution]
 ---
 # Part 2 - The Telegram OSINT
