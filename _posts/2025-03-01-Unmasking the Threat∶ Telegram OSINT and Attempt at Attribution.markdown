@@ -11,19 +11,23 @@ Last time on part 1 we made a deep dive into the overal campaign infrastructure 
 
 ![pipeline]({{site.baseurl}}/images/pipeline.gif)
 *Credential Theft Pipeline*
+
 Among all the repositories whith the same phishing kit deployment, the repo "servdatapage" had a different phishing kit which did not employ the "VIP Email Only" technique. The kit which seems to have been created by another threat actor by the name of "Abilitytiger" had a simple look mimicking a webmail. The webpage included an event listener function for the submit button that captures the email and password, and sends data via AJAX POST request to the "get1.php" file. The "get1.php" is responsible for collecting additonal host information, construct the message body with the collected host data before sending it to an email, telegram channel, and save it locally.
 
 ![dataprep]({{site.baseurl}}/images/dataprep.png)
 *Message Construct*
+
 The credential is distributed in a way that would provide redundancy and resiliency by saving it in 3 completely different ways.
 First, it sent to the "norereply@noway.com" email. A quick osint at the domain, reveals other emails under "noway.com" domain such as "fake@noway.com", "nevermind@noway.com" and similar more.
 
 ![noreply]({{site.baseurl}}/images/noreply.png)
 *Send-to email*
+
 Second, we see the file "log1ns.txt" being opened to append the harvested credentials and host data locally. This file is the same which was most likely commited to github by mistake and revealed potentially the location of our threat actor.
 
 ![locallog1ns]({{site.baseurl}}/images/locallog1ns.png)
 *Credentials Saved Locally*
+
 Lastly, the same message constructed with the harvested credentials and host data is sent to a telegram bot chatid. Having the chatID and token available made it possible to do telegram osint and find additonal information on our threat actor and its extended infrastructure. 
 
 ![servdatapage]({{site.baseurl}}/images/telgrambot.png)
