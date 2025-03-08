@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-image: '/images/0.png'
+image: '/images/0.jpg'
 ---
 
 Howdy, the name is PEMB and I currently work as a Security Analyst for an oil and gas company here in HTX (aka best city, aka best state).
