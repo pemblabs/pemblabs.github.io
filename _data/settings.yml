@@ -1,0 +1,78 @@
+#-------------------------------
+# Site Settings
+title: P.E.M.B LAB RESEARCH
+logo: # You can add own logo. For example '/images/logo.png'.
+description: PEMB LAB is space for security research and all topics about cyber security.
+
+
+#-------------------------------
+# Navigation Settings
+menu-settings:
+  menu-items:
+    - title: 'Home'
+      url: '/'
+    - title: 'About'
+      url: '/about/'
+    - title: 'Contact Me'
+      url: '/contact/'
+#    - title: 'Style Guide'
+#      url: '/styleguide/'
+
+
+#-------------------------------
+# Author Settings
+author:
+  name: PEMB
+  avatar: '/images/0.png'
+
+
+#-------------------------------
+# Hero Settings
+hero:
+  title: PEMB
+  description: Security Researcher, Threat Intel Analyst, Malware Analyst.
+  image: '/images/0.jpg'
+
+
+#-------------------------------
+# Contact Settings
+contact:
+  email: # Add your email for contact form
+  description: Howdy, I enjoy making new friends so feel free to send me a message for a question, sugestion or simply to connect. # Add a description of your form
+
+# NOTE
+# Norlin theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+
+
+#-------------------------------
+# Footer section
+social:
+- {icon: "fa-brands fa-x-twitter", name: "Twitter", link: "https://twitter.com/0xPEMB"}
+- {icon: "ion-logo-linkedin", link: "https://www.linkedin.com/in/pedro-barros19/"}
+#- {icon: "fa-brands fa-facebook-f", name: "Facebook", link: "https://facebook.com"}
+#- {icon: "fa-brands fa-dribbble", name: "Dribbble", link: "https://dribbble.com"}
+#- {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
+#- {icon: "fa-brands fa-pinterest", name: "Pinterest", link: "https://pinterest.com"}
+#- {icon: "fa-brands fa-youtube", name: "Youtube", link: "https://youtube.com"}
+- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/pemblabs"}
+#- {icon: "fa-brands fa-vimeo-v", name: "Vimeo", link: "https://vimeo.com/"}
+
+# Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social/"}
+# Other icons can be found at https://fontawesome.com/icons
+
+
+#-------------------------------
+# Comment Section (Disqus)
+disqus-identifier: disqus_0VlA7ivvCl # Add your shortname for Disqus Comment. For example anvodstudio-demo
+
+
+#-------------------------------
+# Google Analytics
+google-analytics: G-YBX466RJHB # Add your identifier. For example UA-99631805-1.
+
+
+#-------------------------------
+# Newsletter
+mailchimp:  # To enable the mailchimp form, use the value 'enable'. To disable the form, leave the field blank.
+mailchimp-identifier: # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
+mailchimp-button-text: Join
