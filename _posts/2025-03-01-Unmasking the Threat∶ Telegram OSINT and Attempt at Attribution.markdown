@@ -52,17 +52,12 @@ In order to safely do OSINT and gather additional information, I decided to use 
   }
 }
 ```
-The construct is as simple as sending a Get request to "hxxps://api[.]telegram.org/bot<YourBotToken>/<command>". This request revealed the first name under the account but most importantly that it is indeed a bot as we see the value "is_bot" returned "true" and the name of the bot.
-
-![api response]({{site.baseurl}}/images/ragedaybot.png)
-*Telegram API Response*
-
-Navigating to the profile page on the Telegram app didn't reveal any new information.
+The construct is as simple as sending a Get request to "hxxps://api[.]telegram.org/bot'<'YourBotToken>/'<'command>". This request revealed the first name under the account but most importantly that it is indeed a bot as we see the value "is_bot" returned "true" and the name of the bot.
 
 ![ragedaybot]({{site.baseurl}}/images/ragedaybot.png)
 *Telagram bot RageDaybot aka PrettyDay2024*
 
-With not having much to go about from there all that was left was our chatid. Having run multiple commands, the most useful was the "getChat" which provided us with new findings.
+Navigating to the profile page on the Telegram app didn't reveal any new information. Not having much to go about from there all that was left was our chatid. Having run multiple commands, the most useful was the "getChat" which provided us with new findings.
 
 The chat ID does not belong to a group or channel since it was a positive number instead of a negative number. You might think this could be inferred from the chatis which I already had, but it is not so since the API query would have not contained a hyphen. The response also revealed an interesting name for the account as shown below.
 
