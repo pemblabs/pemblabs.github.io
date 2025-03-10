@@ -113,7 +113,7 @@ Before I go on to present additional findings and even point out similarities to
 
 ### Who Are They?
 
-So I continued gathering open source intelligence on our Local PD in the same manner I was conducting. I retrieved all the forms of profile photos which basically only difference in size most likelly for different devices. My attempt was to see if there are any other past profile photos.
+So I continued gathering open source intelligence on our Local PD in the same manner I was conducting. I retrieved all the forms of profile photos which basically only difference in size most likely for different devices. My attempt was to see if there were any other past profile photos.
 
 ![pd photos]({{site.baseurl}}/images/pdphotos.png)
 *GetUserprofilePhotos Response*
@@ -130,7 +130,7 @@ Having navigated around, I found that the page has been actively maintained over
 
 ### Additional Cross Reference and Conclusion
 
-Well as I feared, the article has become too long for my liking so here are some additional findings and conclusion for this.
+Well as I feared, the article has become too long for my liking so here are some additional findings and conclusions for this.
 
 I did cross reference the usernames I found so far to see any commonality and this was true for "Abilitytiger", the phish kit maker, and "RageDaybot".  
 
