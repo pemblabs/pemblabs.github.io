@@ -11,6 +11,12 @@ permalink: /:title
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-tagging
+
+# Per-tag archive pages (see _layouts/tag_page.html)
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
 
 paginate: 8
 paginate_path: "/page/:num"
