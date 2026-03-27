@@ -29,27 +29,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Verify Ruby installation
-        run: ruby -v
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
 
-      - name: Ensure Ruby is in PATH
-        run: echo "/opt/hostedtoolcache/Ruby/3.3.7/x64/bin" >> $GITHUB_PATH
-        
-      - name: Install Bundler
-        run: gem install bundler
-        
-      - name: Verify Bundler Installation
-        run: bundle -v
-
-      - name: Install Dependencies
-        run: bundle install 
-
-      - name: Install Jekyll (if missing)
-        run: gem install jekyll
-
-      - name: Verify Jekyll Installation
-        run: bundle exec jekyll -v
-        
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
