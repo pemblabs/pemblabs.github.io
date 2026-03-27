@@ -11,7 +11,8 @@ permalink: /:title
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-tagging
+  # Gem is jekyll-tagging; Jekyll must require lib/jekyll/tagging.rb
+  - jekyll/tagging
 
 # Per-tag archive pages (see _layouts/tag_page.html)
 tag_page_layout: tag_page
