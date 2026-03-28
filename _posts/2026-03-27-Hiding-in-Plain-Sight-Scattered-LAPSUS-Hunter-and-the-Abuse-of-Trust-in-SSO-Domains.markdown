@@ -3,11 +3,11 @@ layout: post
 title: "Hiding in Plain Sight∶ Scattered LAPSUS$ Hunter and the Abuse of Trust in SSO Domains"
 description: How a single apex domain, dozens of brand-themed hostnames, smishing, and public Telegram recruitment fit together in one identity-focused pipeline, and what still belongs in the “open questions” column.
 date: 2026-03-27 12:00:00 +0000
-image: '/images/slh-passkeysso-subdomains.png'
-tags: [Phishing, ThreatIntel, smishing, vishing, telegram, identity, SSO, MITRE]
+image: '/images/investigating_slh.png'
+tags: [Phishing, ThreatIntel, smishing, vishing, telegram, identity, SSO, MITRE, slh, shinyhunters ]
 ---
 
-Passkeys were sold to users as a way to shrink the phishing surface. Attackers responded the way they always do: they kept the *story* (“set up your passkey”) and swapped the trust anchor for a hostname that *sounds* like the thing you already believe in. When that story rides on SMS and on a single domain that **accumulates a long tail of subdomains**, the pattern usually means **scale**, not a one-off lure.
+Passkeys were sold to users as a way to shrink the phishing surface. Threat actors responded the way they always do: they kept the *story* (“set up your passkey”) and swapped the trust anchor for a hostname that *sounds* like the thing you already believe in. When that story rides on SMS and on a single domain that **accumulates a long tail of subdomains**, the pattern usually means **scale**, not a one-off lure.
 
 This post ties together three artifacts I collected while working the Scattered LAPSUS$ Hunter (SLH) angle: a **smishing** message pointing victims at a fake “passkey setup” portal, a **subdomain inventory** that shows how one apex domain can impersonate many brands at once, and a **Telegram recruitment post** from **Scattered LAPSUS$ Hunter’s Telegram presence** that advertises paid helpdesk calling work. I read these as parts of the **same operational picture**: commodity identity abuse fronted by SSO-themed naming, with a labor market on the side that buys scripted voice calls against helpdesks.
 
@@ -42,14 +42,14 @@ I treat this as **strong, public evidence of vishing supply**: someone is commod
 
 ## Why SSO-themed naming hits harder than a generic phish
 
-Enterprise identity is a chain of trust: **IdP**, **SSO**, **MFA**, **device posture**, **helpdesk recovery**. Attackers only need to **weaken one link**. A domain that *sounds* like “passkey + SSO” is aimed at the **mental model** users already have, not at the cryptographic details they do not see.
+Enterprise identity is a chain of trust: **IdP**, **SSO**, **MFA**, **device posture**, **helpdesk recovery**. Threat actors only need to **weaken one link**. A domain that *sounds* like “passkey + SSO” is aimed at the **mental model** users already have, not at the cryptographic details they do not see.
 
 For defenders, the actionable threads are:
 
 - **Brand and hostname monitoring** for new registrations and wildcard children that track your industry peers, not only your own trademarks.
 - **SMS and messaging abuse** reporting loops; treat **passkey-themed** templates as first-class in SOC playbooks.
 - **Helpdesk controls** that resist “I just need a reset” velocity: callbacks, manager escalation, and device-bound recovery.
-- **Voice-in-the-loop verification**: treating **voice-only** trust as both a **policy** and a **tooling** problem, especially when adversaries buy scripted calling labor at scale.
+- **Voice-in-the-loop verification**: treating **voice-only** trust as both a **policy** and a **tooling** problem, especially when threat actors buy scripted calling labor at scale.
 
 ## IOCs (defanged, representative)
 
