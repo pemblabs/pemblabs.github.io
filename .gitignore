@@ -1,4 +1,7 @@
 #_site
+# Local Cursor rules (not committed)
+.cursor/
+
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
